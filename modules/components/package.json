@@ -1,11 +1,8 @@
 {
-  "name": "@lern/components",
+  "name": "@stub/components",
   "version": "1.0.0",
   "main": "index.ts",
   "license": "MIT",
-  "workspaces": [
-    "modules/*"
-  ],
   "author": {
     "name": "Zakhar Kononov",
     "email": "zorgizorgik@gmail.com",
