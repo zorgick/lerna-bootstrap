@@ -2,6 +2,17 @@
   "name": "@stub/app",
   "version": "1.0.0",
   "private": true,
+  "main": "build/index.js",
+  "module": "src/index.ts",
+  "license": "MIT",
+  "author": {
+    "name": "Zakhar Kononov",
+    "email": "zorgizorgik@gmail.com",
+    "social": {
+      "app": "telegram",
+      "nickName": "@zorgick"
+    }
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
