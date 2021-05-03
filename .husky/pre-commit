@@ -1,0 +1,22 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo -e "[pre-commit hook] Starting..."
+
+git diff --staged 
+
+# Allows us to read user input below, assigns stdin to keyboard
+exec < /dev/tty
+
+while true; do
+  read -p "[pre-commit hook] Are staged changes correct? (Y/n) " yn
+  if [ "$yn" = "" ]; then
+    yn='Y'
+  fi
+  case $yn in
+      [Yy] ) echo "'Everything is correct! Continuing...'"; break;;
+      [Nn] ) echo "Aborting process! Staged changes have flaws."; exit 1;;
+      * ) echo "Please answer y or n for yes or no.";;
+  esac
+done
+
