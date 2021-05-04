@@ -19,8 +19,7 @@
     "setup": "yarn install && yarn lerna bootstrap",
     "story": "lerna run storybook --stream",
     "start": "lerna run start --scope @stub/app",
-    "prepare": "husky install",
-    "cm": "cz"
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@commitlint/cli": "^12.1.1",
