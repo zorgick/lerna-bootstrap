@@ -2,7 +2,7 @@
 
 1. To install dependencies in all packages use `lerna` tool with an appropriate
 flag (either `-S` or `-D`);
-2. To install dependencies in a specifix package use lerna with an appropriate
+2. To install dependencies in a specifi package use lerna with an appropriate
 flag (either `-S` or `-D`) and package name from package.json, as follows,
 `yarn lerna add --scope=@stub/components`
 3. To create template package using common utils like CRA execute 
@@ -31,7 +31,7 @@ instead of GUI
 
 ```sh
 # this will launch pre-commit, prepare-commit-msg and commit-msg hooks
-# provide random string as a commit message, it will be neglected after 
+# provide a random string as a commit message, it will be neglected after 
 # prepare-commit-msg
 git commit -m 'asdfkjk'
 ```
