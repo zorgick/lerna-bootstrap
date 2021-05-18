@@ -29,6 +29,7 @@ module.exports = {
     'react/prop-types': 'off',
     'no-use-before-define': 'off',
     'no-param-reassign': 'off',
+    'import/no-cycle': 'off',
     'react/jsx-filename-extension': [
       2,
       {
