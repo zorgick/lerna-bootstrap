@@ -1,7 +1,11 @@
 {
-  "extends": "./tsconfig.build.json",
-  "baseUrl": ".",
-  "paths": {
-    "@stub/*": ["modules/*/src"]
+  "compilerOptions": {
+    "jsx": "react",
+    "baseUrl": "./modules",
+    "paths": {
+      "@stub/components/*": ["components/src/*"],
+      "@stub/web/*": ["web/src/*"],
+      "@stub/eslint/*": ["eslint/*"]
+    }
   }
 }

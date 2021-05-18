@@ -8,7 +8,7 @@ coverage
 jest-report.xml
 
 # production
-build
+**/build
 
 # generated
 **/.DS_Store

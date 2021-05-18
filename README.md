@@ -12,6 +12,11 @@ into the root package.json)
 `yarn create` with a necessary command. For ex.,
 `yarn create react-app modules/<packageName> --template typescript`
 
+# Typescript configuration
+- Separate configs are used
+  - One for transpiling ts code into js (tsconfig.build.json)
+  - Another for seamless navigation across whole monorepo (tsconfig.json)
+
 # GIT Code of conduct
 
 This monorepo has hooks enabled and tuned. There are currently these hooks:
