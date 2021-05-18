@@ -1,0 +1,7 @@
+{
+  "extends": "./tsconfig.build.json",
+  "baseUrl": ".",
+  "paths": {
+    "@stub/*": ["modules/*/src"]
+  }
+}
