@@ -2,7 +2,7 @@ import React from 'react';
 
 import { ButtonProps } from '../types';
 
-import './styles/button.css';
+import s from './styles/button.module.css';
 
 /**
  * Primary UI component for user interaction
@@ -14,11 +14,13 @@ export const Button: React.FC<ButtonProps> = ({
   label,
   ...props
 }) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+  const mode = primary ? s['storybook-button--primary'] : s['storybook-button--secondary'];
+  console.log(s);
+  console.log(mode);
   return (
     <button
       type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
+      className={[s['storybook-button'], s[`storybook-button--${size}`], mode].join(' ')}
       style={{ backgroundColor }}
       {...props}
     >

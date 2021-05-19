@@ -18,7 +18,8 @@
   "scripts": {
     "setup": "yarn install && yarn lerna bootstrap",
     "story": "lerna run storybook --stream",
-    "start": "lerna run start --scope @stub/app",
+    "start": "lerna run start --stream",
+    "build": "lerna run build --stream",
     "prepare": "husky install"
   },
   "devDependencies": {
