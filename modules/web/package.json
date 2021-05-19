@@ -2,9 +2,8 @@
   "name": "@stub/web",
   "version": "1.0.0",
   "private": true,
-  "main": "build/index.js",
-  "module": "src/index.ts",
-  "types": "build/index.d.ts",
+  "main": "build/index",
+  "types": "build/index",
   "license": "MIT",
   "author": {
     "name": "Zakhar Kononov",
@@ -21,6 +20,7 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
+    "@stub/components": "^1.0.0",
     "react-helmet": "^6.1.0",
     "web-vitals": "^1.0.1"
   },

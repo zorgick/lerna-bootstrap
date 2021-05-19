@@ -2,9 +2,8 @@
   "name": "@stub/components",
   "version": "1.0.0",
   "private": true,
-  "main": "build/index.js",
-  "module": "src/index.ts",
-  "types": "build/index.d.ts",
+  "main": "build/index",
+  "types": "build/index",
   "license": "MIT",
   "author": {
     "name": "Zakhar Kononov",
@@ -16,7 +15,7 @@
   },
   "scripts": {
     "clean": "rimraf build",
-    "build": "yarn clean && tsc --build ./tsconfig.build.json  && cp \"./package.json\" ./build/",
+    "build": "yarn clean && tsc --build ./tsconfig.build.json",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "lint": "eslint --ext .tsx,.ts src",

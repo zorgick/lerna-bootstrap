@@ -2,12 +2,14 @@
   "extends": "../../tsconfig.build.json",
   "compilerOptions": {
     "rootDir": "./src",
-    "outDir": "./build"
+    "outDir": "./build",
+    "jsx": "react"
   },
   "include": [
     "src/**/*"
   ],
   "exclude": [
-    "src/stories/*"
+    "src/stories",
+    "src/types"
   ]
 }
