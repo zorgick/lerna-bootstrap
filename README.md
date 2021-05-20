@@ -61,7 +61,7 @@ commitizen makes sure you follow to these conventions:
 
 
 **EXAMPLE**
-```
+```sh
 build(common): Set up commit messages linting
 
 
@@ -72,6 +72,6 @@ conventional commits
 # If you use an issue tracker (e.g., github issues or Jira),
 # put references to them at the footer, like this:
 
-Resolves: #123
-See also: #456, #789
+Resolves: 123
+See also: 456, 789
 ```

@@ -1,7 +1,6 @@
 {
   "name": "@stub/components",
   "version": "1.0.0",
-  "private": true,
   "main": "build/index",
   "types": "build/index",
   "license": "MIT",

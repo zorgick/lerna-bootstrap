@@ -1,7 +1,6 @@
 {
   "name": "@stub/web",
   "version": "1.0.0",
-  "private": true,
   "main": "build/index",
   "types": "build/index",
   "license": "MIT",
@@ -17,7 +16,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prepare": "echo \"SKIP_PREFLIGHT_CHECK=true\nDISABLE_ESLINT_PLUGIN=true\nDISABLE_NEW_JSX_TRANSFORM=true\" > .env"
   },
   "dependencies": {
     "@stub/components": "^1.0.0",

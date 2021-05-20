@@ -20,7 +20,7 @@
     "story": "lerna run storybook --stream",
     "start": "lerna run start --stream",
     "build": "lerna run build --stream",
-    "prepare": "husky install"
+    "prepare": "husky install && lerna run prepare --stream"
   },
   "devDependencies": {
     "@commitlint/cli": "^12.1.1",
