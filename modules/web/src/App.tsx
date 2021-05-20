@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, } from '@stub/components';
+import { Button, Header } from '@stub/components';
 
 function App() {
   return (
@@ -11,6 +11,8 @@ function App() {
           <code>src/App.tsx</code>
           {' '}
           and save to reload.
+          <Button label="click" primary />
+          <Header user={{ sth: 'sth' }} onLogin={() => 0} onLogout={() => 0} onCreateAccount={() => 0} />
         </p>
       </header>
     </div>
