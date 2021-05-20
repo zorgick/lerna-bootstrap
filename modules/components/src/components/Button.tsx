@@ -15,8 +15,6 @@ export const Button: React.FC<ButtonProps> = ({
   ...props
 }) => {
   const mode = primary ? s['storybook-button--primary'] : s['storybook-button--secondary'];
-  console.log(s);
-  console.log(mode);
   return (
     <button
       type="button"
