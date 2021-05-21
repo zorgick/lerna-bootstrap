@@ -4,7 +4,7 @@
 flag (either `-S` or `-D`);
 2. To install dependencies in a specific package use lerna with an appropriate
 flag (either `-S` or `-D`) and package name from package.json, as follows,
-`yarn lerna add --scope=@stub/components`
+`yarn lerna add --scope=@modules/components`
 2. To install dependencies in the root directory use can use yarn
 `yarn add -W ...` (-W is a necessary flag for adding a dependency 
 into the root package.json)

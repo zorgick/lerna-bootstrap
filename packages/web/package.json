@@ -1,5 +1,5 @@
 {
-  "name": "@stub/web",
+  "name": "@packages/web",
   "version": "1.0.0",
   "main": "build/index",
   "types": "build/index",
@@ -20,7 +20,7 @@
     "prepare": "echo \"SKIP_PREFLIGHT_CHECK=true\nDISABLE_ESLINT_PLUGIN=true\nDISABLE_NEW_JSX_TRANSFORM=true\" > .env"
   },
   "dependencies": {
-    "@stub/components": "^1.0.0",
+    "@modules/components": "^1.0.0",
     "react-helmet": "^6.1.0",
     "web-vitals": "^1.0.1"
   },
@@ -29,7 +29,7 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@stub/eslint": "^1.0.0",
+    "@modules/eslint": "^1.0.0",
     "@types/jest": "^26.0.15",
     "@types/node": "^12.0.0",
     "@types/react": "^17.0.0",

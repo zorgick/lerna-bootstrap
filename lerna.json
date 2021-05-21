@@ -1,6 +1,7 @@
 {
   "packages": [
-    "modules/*"
+    "modules/*",
+    "packages/*"
   ],
   "npmClient": "yarn",
   "npmClientArgs": ["--no-lockfile"],

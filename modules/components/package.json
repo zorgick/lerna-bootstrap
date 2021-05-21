@@ -1,5 +1,5 @@
 {
-  "name": "@stub/components",
+  "name": "@modules/components",
   "version": "1.0.0",
   "main": "build/index",
   "types": "build/index",
@@ -34,7 +34,7 @@
     "@storybook/addon-links": "^6.2.8",
     "@storybook/cli": "^6.2.8",
     "@storybook/node-logger": "^6.2.8",
-    "@stub/eslint": "^1.0.0",
+    "@modules/eslint": "^1.0.0",
     "@types/jest": "^26.0.15",
     "@types/node": "^12.0.0",
     "@types/react": "^17.0.0",

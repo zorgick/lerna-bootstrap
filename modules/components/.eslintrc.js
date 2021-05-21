@@ -1,5 +1,5 @@
 /* eslint-disable */
-const commonConfig = require('@stub/eslint');
+const commonConfig = require('@modules/eslint');
 
 module.exports = {
   ...commonConfig,

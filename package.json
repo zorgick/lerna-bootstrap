@@ -12,16 +12,18 @@
     }
   },
   "workspaces": [
-    "modules/*"
+    "modules/*",
+    "packages/*"
   ],
   "private": true,
   "scripts": {
     "setup": "yarn install && yarn lerna bootstrap",
     "story": "lerna run storybook --stream",
-    "start": "lerna run start --stream",
-    "clean": "lerna run clean --stream",
     "prune-stale": "lerna run prune-stale --stream",
-    "build": "yarn clean && lerna run build --stream",
+    "start": "lerna run start --stream",
+    "start:web": "lerna run start --scope=@packages/web",
+    "build": "lerna run build --stream",
+    "build:modules": "lerna run build --scope=@modules/*",
     "observe": "yarn prune-stale && tsc -b tsconfig.packages.json --watch",
     "prepare": "husky install && lerna run prepare --stream"
   },

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Header } from '@stub/components';
+import { Button, Header } from '@modules/components';
 
 function App() {
   return (
