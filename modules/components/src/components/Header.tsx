@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Button } from './index';
-import './styles/header.css';
+import s from './styles/header.module.css';
 
 export interface HeaderProps {
   user?: Record<string, any>;
@@ -14,7 +14,7 @@ export const Header: React.FC<HeaderProps> = ({
   user, onLogin, onLogout, onCreateAccount,
 }) => (
   <header>
-    <div className="wrapper">
+    <div className={s.wrapper}>
       <div>
         <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
           <g fill="none" fillRule="evenodd">
