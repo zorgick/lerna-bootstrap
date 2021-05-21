@@ -15,7 +15,6 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react",
     "noFallthroughCasesInSwitch": true,
     "rootDir": "./src",
     "outDir": "./build",

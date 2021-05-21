@@ -3,7 +3,7 @@
 
 echo -e "[pre-commit hook] Starting..."
 
-yarn lint-staged;
+yarn lint-staged && yarn types:check
 
 git diff --staged 
 

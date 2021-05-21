@@ -7,10 +7,10 @@
     "noEmitOnError": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
+    "jsx": "react",
     "types": []
   },
   "exclude": [
-    "node_modules",
-    "build"
+    "node_modules"
   ]
 }

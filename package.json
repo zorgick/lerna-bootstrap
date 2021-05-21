@@ -20,6 +20,7 @@
     "setup": "yarn install && yarn lerna bootstrap",
     "story": "lerna run storybook --stream",
     "lint": "lerna run lint --parallel",
+    "types:check": "tsc --noEmit",
     "start": "lerna run start --stream",
     "start:web": "lerna run start --scope=@packages/web",
     "build": "lerna run build --stream",
