@@ -5,7 +5,9 @@
     "outDir": "./build",
     "jsx": "react",
     "composite": true,
-    "declaration": true
+    "declaration": true,
+    "incremental": true,
+    "tsBuildInfoFile": "./build/.tsbuildinfo"
   },
   "include": [
     "src/**/*"

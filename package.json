@@ -19,12 +19,12 @@
   "scripts": {
     "setup": "yarn install && yarn lerna bootstrap",
     "story": "lerna run storybook --stream",
-    "prune-stale": "lerna run prune-stale --stream",
+    "lint": "lerna run lint --parallel",
     "start": "lerna run start --stream",
     "start:web": "lerna run start --scope=@packages/web",
     "build": "lerna run build --stream",
     "build:modules": "lerna run build --scope=@modules/*",
-    "observe": "yarn prune-stale && tsc -b tsconfig.packages.json --watch",
+    "observe": "tsc -b tsconfig.packages.json --watch",
     "prepare": "husky install && lerna run prepare --stream"
   },
   "devDependencies": {
@@ -36,6 +36,7 @@
     "cz-conventional-changelog": "^3.2.0",
     "husky": "^6.0.0",
     "lerna": "^4.0.0",
+    "lint-staged": "^11.0.0",
     "typescript": "^4.2.4"
   },
   "dependencies": {
@@ -46,5 +47,10 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix"
+    ]
   }
 }

@@ -3,6 +3,8 @@
 
 echo -e "[pre-commit hook] Starting..."
 
+yarn lint-staged;
+
 git diff --staged 
 
 # Allows us to read user input below, assigns stdin to keyboard
