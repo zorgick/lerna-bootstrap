@@ -16,9 +16,17 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react",
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "rootDir": "./src",
+    "outDir": "./build",
+    "composite": true
   },
+  "references": [
+    {
+      "path": "../components/tsconfig.build.json"
+    }
+  ],
   "include": [
-    "src"
+    "src/**/*"
   ]
 }

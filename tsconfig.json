@@ -1,7 +1,6 @@
 {
   "extends": "./tsconfig.build.json",
   "compilerOptions": {
-    "jsx": "react",
     "baseUrl": ".",
     "paths": {
       "@stub/*": ["modules/*/src"]

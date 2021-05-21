@@ -3,13 +3,14 @@
   "compilerOptions": {
     "rootDir": "./src",
     "outDir": "./build",
-    "jsx": "react"
+    "jsx": "react",
+    "composite": true,
+    "declaration": true
   },
   "include": [
     "src/**/*"
   ],
   "exclude": [
-    "src/stories",
-    "src/types"
+    "src/stories"
   ]
 }

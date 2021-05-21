@@ -19,7 +19,10 @@
     "setup": "yarn install && yarn lerna bootstrap",
     "story": "lerna run storybook --stream",
     "start": "lerna run start --stream",
-    "build": "lerna run build --stream",
+    "clean": "lerna run clean --stream",
+    "prune-stale": "lerna run prune-stale --stream",
+    "build": "yarn clean && lerna run build --stream",
+    "observe": "yarn prune-stale && tsc -b tsconfig.packages.json --watch",
     "prepare": "husky install && lerna run prepare --stream"
   },
   "devDependencies": {

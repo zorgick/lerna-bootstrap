@@ -21,6 +21,9 @@ yarn-error.log*
 lerna-debug.log*
 *.lock
 
+# TypeScript cache
+**/*.tsbuildinfo
+
 # misc
 **/.env.local
 **/.env.development.local

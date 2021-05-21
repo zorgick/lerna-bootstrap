@@ -75,3 +75,20 @@ conventional commits
 Resolves: 123
 See also: 456, 789
 ```
+
+# TS configuration
+
+*modules* workspaces are bundled by TS using `--build`` option.
+When final programs are using code from modules workspaces, it is recommended to
+execute `yarn observe` which will inspect all **built** workspaces for changes 
+and recompile only changed pieces of the code.
+
+
+**NOTE!** *modules* workspaces must be built before this command is run.
+
+
+Each build with TS will generate a build cache (*.tsbuildinfo),
+a file that helps TS to detect stale output files and to rebuild only them.
+Executing `yarn observe` will remove this cache file to prevent
+errors emerging from missing **build/** directory, when the source code 
+remains unchanged, thus TS won't rebuild it.

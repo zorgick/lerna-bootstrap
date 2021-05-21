@@ -13,7 +13,8 @@
     }
   },
   "scripts": {
-    "clean": "rimraf build",
+    "prune-stale": "rimraf ./*.tsbuildinfo",
+    "clean": "rimraf build && yarn prune-stale",
     "build": "yarn clean && tsc --build ./tsconfig.build.json && cp  -r \"./src/components/styles/\" ./build/components/",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
