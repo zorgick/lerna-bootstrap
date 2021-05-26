@@ -5,10 +5,10 @@ flag (either `-S` or `-D`);
 2. To install dependencies in a specific package use lerna with an appropriate
 flag (either `-S` or `-D`) and package name from package.json, as follows,
 `yarn lerna add --scope=@modules/components`
-2. To install dependencies in the root directory use can use yarn
+3. To install dependencies in the root directory use can use yarn
 `yarn add -W ...` (-W is a necessary flag for adding a dependency 
 into the root package.json)
-3. To create template package using common utils like CRA execute 
+4. To create template package using common utils like CRA execute 
 `yarn create` with a necessary command. For ex.,
 `yarn create react-app modules/<packageName> --template typescript`
 
@@ -86,9 +86,13 @@ and recompile only changed pieces of the code.
 
 **NOTE!** *modules* workspaces must be built before this command is run.
 
+# Linting
 
-Each build with TS will generate a build cache (*.tsbuildinfo),
-a file that helps TS to detect stale output files and to rebuild only them.
-Executing `yarn observe` will remove this cache file to prevent
-errors emerging from missing **build/** directory, when the source code 
-remains unchanged, thus TS won't rebuild it.
+To lint all packages and modules use `yarn lint` command.
+
+
+To autofix some minor code style errors use *double escaping*, 
+e.g., `yarn lint -- -- --fix` - the first escapes are used for yarn,
+the second escapes are used for lerna cli. (see example in lint-staged config)
+
+

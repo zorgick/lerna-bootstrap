@@ -41,15 +41,15 @@ export const Header: React.FC<HeaderProps> = ({
           </Button>
         ) : (
           <>
-            <Button variant="contained" size="small" onClick={onLogin} >
+            <Button variant="contained" size="small" onClick={onLogin}>
               Log in
             </Button>
-            <Button variant="outlined" size="small" onClick={onCreateAccount} >
+            <Button variant="outlined" size="small" onClick={onCreateAccount}>
               Log out
             </Button>
           </>
         )}
       </div>
     </div>
-  </header >
+  </header>
 );
