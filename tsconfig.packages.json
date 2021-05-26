@@ -1,8 +1,8 @@
 {
   "files": [],
   "references": [
-  {
-    "path": "./modules/components/tsconfig.build.json"
-  }
- ]
+    {
+      "path": "./modules/components/tsconfig.build.json"
+    }
+  ]
 }
