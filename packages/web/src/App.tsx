@@ -12,10 +12,12 @@ function App() {
           <code>src/App.tsx</code>
           {' '}
           and save to reload.
-          <Button label="click" />
+          <Button >
+            click
+        </Button>
         </p>
       </header>
-    </div>
+    </div >
   );
 }
 
