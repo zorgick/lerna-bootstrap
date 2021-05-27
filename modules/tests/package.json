@@ -1,0 +1,29 @@
+{
+  "name": "@modules/tests",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": {
+    "name": "Zakhar Kononov",
+    "email": "zorgizorgik@gmail.com",
+    "social": {
+      "app": "telegram",
+      "nickName": "@zorgick"
+    }
+  },
+  "scripts": {
+    "types:check": "tsc --noEmit",
+    "lint": "eslint --ext ts \"./**/*.spec.ts\"",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@modules/eslint": "^1.0.0"
+  },
+  "dependencies": {
+    "@modules/components": "^1.0.0",
+    "@types/jest": "~26.0.4",
+    "jest": "~26.1.0",
+    "ts-jest": "~26.5.5",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.1.2"
+  }
+}

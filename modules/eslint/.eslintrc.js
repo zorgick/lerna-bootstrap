@@ -33,13 +33,13 @@ module.exports = {
     'react/jsx-filename-extension': [
       2,
       {
-        'extensions': [
+        extensions: [
           '.js',
           '.jsx',
           '.ts',
-          '.tsx'
-        ]
-      }
+          '.tsx',
+        ],
+      },
     ],
     'import/extensions': 'off',
     'no-plusplus': 'off',
@@ -54,25 +54,31 @@ module.exports = {
     'max-len': [
       'error',
       {
-        'code': 125
-      }
+        code: 125,
+      },
     ],
     'import/order': [
       'warn',
       {
         'newlines-between': 'always-and-inside-groups',
-        'groups': [
+        groups: [
           [
             'external',
-            'internal'
+            'internal',
           ],
           'parent',
           [
             'sibling',
-            'index'
-          ]
-        ]
-      }
-    ]
-  }
+            'index',
+          ],
+        ],
+      },
+    ],
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: true,
+      },
+    ],
+  },
 };
