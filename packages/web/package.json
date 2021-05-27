@@ -18,6 +18,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint --ext .tsx,.ts src",
+    "types:check": "tsc --noEmit",
     "prepare": "echo \"SKIP_PREFLIGHT_CHECK=true\nDISABLE_ESLINT_PLUGIN=true\nDISABLE_NEW_JSX_TRANSFORM=true\" > .env"
   },
   "dependencies": {

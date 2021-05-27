@@ -18,6 +18,7 @@
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "lint": "eslint --ext .tsx,.ts src",
+    "types:check": "tsc --noEmit",
     "prepack": "yarn build"
   },
   "peerDependencies": {

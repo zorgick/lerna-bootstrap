@@ -22,7 +22,7 @@
   },
   "references": [
     {
-      "path": "../components/tsconfig.build.json"
+      "path": "../../modules/components/tsconfig.build.json"
     }
   ],
   "include": [

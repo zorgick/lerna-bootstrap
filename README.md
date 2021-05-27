@@ -78,13 +78,24 @@ See also: 456, 789
 
 # TS configuration
 
-*modules* workspaces are bundled by TS using `--build`` option.
+- *modules* workspaces are bundled by TS using `--build`` option.
 When final programs are using code from modules workspaces, it is recommended to
 execute `yarn observe` which will inspect all **built** workspaces for changes 
 and recompile only changed pieces of the code.
 
 
 **NOTE!** *modules* workspaces must be built before this command is run.
+
+
+- To launch ts checks execute `yarn types:check`. It builds all packages
+and then runs ts static analyzer.
+
+
+**NOTE!** this script MUST be run from the root. The packages may depend on 
+other packages, so built dependencies are needed for a correct functioning of
+the static analyzer.
+
+
 
 # Linting
 
