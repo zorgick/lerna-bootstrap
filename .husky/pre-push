@@ -1,0 +1,8 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo "\n[pre-push hook] Starting\n"
+
+yarn types:check
+
+echo "\n[pre-push hook] Finished\n"

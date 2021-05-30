@@ -22,8 +22,6 @@ into the root package.json)
 This monorepo has hooks enabled and tuned. There are currently these hooks:
 1. `pre-commit` hook does:
   - linting, 
-  - static type checking, 
-  - testing,
   - changed codebase verification by a user
 2. `prepare-commit-msg` hook launches commitizen that guides through 
 commit creation steps
@@ -31,7 +29,10 @@ commit creation steps
 according to [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/)
 that are based on
 [angular conventions](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#type)
-4. `pre-push` hook runs smoke and E2E tests
+4. `pre-push` hook runs
+  - smoke tests,
+  - static type checking,
+  - testing,
 
 **NB!** To trigger all the hooks in 100% cases you *MUST* use
 your shell (bash is preferred)/cli (if on Windows, WSL[1|2] is preferred) 

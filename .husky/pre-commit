@@ -1,10 +1,10 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-echo "[pre-commit hook] Starting...\n\n"
+echo "\n[pre-commit hook] Starting...\n"
 
-# Either lint and check types successfully or print errors and exit
-(yarn lint-staged && yarn types:check) || exit 1;
+# Either lint successfully or print errors and exit
+yarn lint-staged || exit 1;
 
 git diff --staged 
 
@@ -14,9 +14,10 @@ exec < /dev/tty
 while true; do
   read -p "[pre-commit hook] Are staged changes correct? (Y/n) " yn
   case $yn in
-      [Yy] ) echo "'Everything is correct! Continuing...\n\n'"; break;;
-      [Nn] ) echo "Aborting process! Staged changes have flaws.\n\n"; exit 1;;
-      * ) echo "Please answer y or n for yes or no.\n\n";;
+      [Yy] ) echo "'Everything is correct! Continuing...\n'"; break;;
+      [Nn] ) echo "Aborting process! Staged changes have flaws.\n"; exit 1;;
+      * ) echo "Please answer y or n for yes or no.\n";;
   esac
 done
 
+echo "\n[pre-commit hook] Finished\n"
