@@ -3,5 +3,4 @@ const commonConfig = require('@modules/eslint');
 
 module.exports = {
   ...commonConfig,
-  rules: {},
 }

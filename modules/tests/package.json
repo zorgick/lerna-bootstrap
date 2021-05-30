@@ -12,16 +12,19 @@
   },
   "scripts": {
     "types:check": "tsc --noEmit",
-    "lint": "eslint --ext ts \"./**/*.spec.ts\"",
+    "lint": "eslint --ext ts,tsx \"./**/*.spec.{ts,tsx}\"",
     "test": "jest"
   },
   "devDependencies": {
-    "@modules/eslint": "^1.0.0"
+    "@modules/eslint": "^1.0.0",
+    "@testing-library/jest-dom": "^5.12.0",
+    "@testing-library/react": "^11.2.7"
   },
   "dependencies": {
     "@modules/components": "^1.0.0",
     "@types/jest": "~26.0.4",
     "jest": "~26.1.0",
+    "react": "^17.0.2",
     "ts-jest": "~26.5.5",
     "ts-node": "^10.0.0",
     "typescript": "^4.1.2"
