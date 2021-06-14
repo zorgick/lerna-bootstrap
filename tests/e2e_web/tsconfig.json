@@ -1,0 +1,16 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "allowJs": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "isolatedModules": false,
+    "noEmit": true,
+    "noFallthroughCasesInSwitch": true,
+    "types": ["cypress"]
+  },
+  "include": [
+    "cypress/**/*.spec.*"
+  ]
+}
