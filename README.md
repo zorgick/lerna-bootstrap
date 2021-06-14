@@ -6,26 +6,17 @@ tests setup, ui kit, storybook, CRA, tsnode, MySQL, NextJS, Xstate, MST and
 many more solutions that are necessary for a fullstack development.
 
 The app is bundled primarily with the typescript built in transpiler with the
-support of cold start type definitions of any workspaces' piece of code. Third
+support of cold start type definitions of any workspaces piece of code. Third
 party solutions, such as CRA or Nextjs, in this monorepo use their own bundler.
 
 The monorepo consists of several workspaces groups:
 
-| Group    | Description                                                       |
-| -------- | ----------------------------------------------------------------- |
-| modules  | [modules](./modules) - any sort of code that can be shared between|
-|          | projects, e.g. ui kits, utils, etc.                               |
-| -------- | ----------------------------------------------------------------- |
-| packages | [packages](./packages) - final product, that can be deployed on   |
-|          | the server as an application. Codebase from this workspace is     |
-|          | ideally constructed of modules and state workspaces' code.        |
-| -------- | ----------------------------------------------------------------- |
-| tests    | [tests](./tests) - unit / integration / e2e tests of any present  |
-|          | in other workspaces codebase.                                     |
-| -------- | ----------------------------------------------------------------- |
-| state    | [state](./state) - data containers, state management solution     |
-|          | for the applications in packages workspace.                       |
-| -------- | ----------------------------------------------------------------- |
+| Group    | Description                                                                                                                                                                              |
+| -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| modules  | [modules](./modules) - any sort of code that can be shared between projects, e.g. ui kits, utils, etc.                                                                                   |
+| packages | [packages](./packages) - final product, that can be deployed on the server as an application. Codebase from this workspace is ideally constructed of modules and state workspaces code.  |
+| tests    | [tests](./tests) - unit / integration / e2e tests of any present in other workspaces codebase.                                                                                           |
+| state    | [state](./state) - data containers, state management solution for the applications in packages workspace.                                                                                |
 
 > 🚩 **Note**
 > 
@@ -47,6 +38,24 @@ into the root package.json)
 `yarn create` with a necessary command. For ex.,
 `yarn create react-app packages/<packageName> --template typescript`
 
+## NPM scripts
+
+| Type                  | Description                                                                                   |
+| --------------------- | --------------------------------------------------------------------------------------------- |
+| `setup`               | Installs dependencies and links all workspaces by hoisting them in root node_modules          |
+| `story`               | Launches storybook for [components](./modules/components)                                     |
+| `start`               | Starts dev server in [packages](./packages) workspace group                                   |
+| `start:web`           | Starts dev server in [packages/web](./packages/web) workspace                                 |
+| `build`               | Launches build process in all workspaces                                                      |
+| `build:modules`       | Launches build process in [modules](./modules) workspace group                                |
+| `cypress:web`         | Opens Cypress runner                                                                          |
+| `lint`                | Runs lint in all workspaces                                                                   |
+| `types:check`         | Runs `build:modules` and executes static type checks                                          |
+| `test:components`     | Runs unit tests in [components](./modules/components)                                         |
+| `test:web`            | Starts dev server in [packages/web](./packages/web) workspace and runs `cypress:web`          |
+| `observe`             | Inspects all **built** workspaces for changes and recompiles only changed pieces of the code  |
+| `prepare`             | Initializes husky hooks and runs prepare script in all workspaces                             |
+
 
 ## Typescript configuration
 
@@ -60,7 +69,7 @@ and recompile only changed pieces of the code.
 
 > 🚩 **Note**
 >
-> *modules* workspaces must be built before this command is run.
+> *modules* workspace must be built before this command is run.
 
 - To launch ts checks execute `yarn types:check`. It builds all packages
 and then runs ts static analyzer.
