@@ -2,7 +2,8 @@
   "packages": [
     "modules/*",
     "packages/*",
-    "tests/*"
+    "tests/*",
+    "state/*"
   ],
   "npmClient": "yarn",
   "npmClientArgs": ["--no-lockfile"],

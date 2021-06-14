@@ -14,19 +14,22 @@
   "workspaces": [
     "modules/*",
     "packages/*",
-    "tests/*"
+    "tests/*",
+    "state/*"
   ],
   "private": true,
   "scripts": {
     "setup": "yarn install && yarn lerna bootstrap",
     "story": "lerna run storybook --stream",
-    "lint": "lerna run lint --parallel",
-    "types:check": "yarn build:modules && lerna run types:check",
-    "test:components": "lerna run test --scope=@tests/unit-components",
+    "cypress:web": "lerna run cypress:open --scope=@tests/e2e-web",
     "start": "lerna run start --stream",
     "start:web": "lerna run start --scope=@packages/web",
     "build": "lerna run build --stream",
     "build:modules": "lerna run build --scope=@modules/*",
+    "lint": "lerna run lint --parallel",
+    "types:check": "yarn build:modules && lerna run types:check",
+    "test:components": "lerna run test --scope=@tests/unit-components",
+    "test:web": "concurrently yarn:start:web yarn:cypress:web",
     "observe": "tsc -b tsconfig.packages.json --watch",
     "prepare": "husky install && lerna run prepare --stream"
   },
@@ -35,6 +38,7 @@
     "@commitlint/config-conventional": "^12.1.1",
     "@storybook/cli": "^6.2.8",
     "commitizen": "^4.2.3",
+    "concurrently": "^6.2.0",
     "create-react-app": "^4.0.3",
     "cz-conventional-changelog": "^3.2.0",
     "husky": "^6.0.0",

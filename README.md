@@ -1,26 +1,92 @@
-# Installation
+## Getting started
+
+Lerna-bootstrap is a multitool monorepo that makes it easy to launch any web-based
+project. It includes linting, static type checking, unit | integration | e2e
+tests setup, ui kit, storybook, CRA, tsnode, MySQL, NextJS, Xstate, MST and
+many more solutions that are necessary for a fullstack development.
+
+The app is bundled primarily with the typescript built in transpiler with the
+support of cold start type definitions of any workspaces' piece of code. Third
+party solutions, such as CRA or Nextjs, in this monorepo use their own bundler.
+
+The monorepo consists of several workspaces groups:
+
+| Group    | Description                                                       |
+| -------- | ----------------------------------------------------------------- |
+| modules  | [modules](./modules) - any sort of code that can be shared between|
+|          | projects, e.g. ui kits, utils, etc.                               |
+| -------- | ----------------------------------------------------------------- |
+| packages | [packages](./packages) - final product, that can be deployed on   |
+|          | the server as an application. Codebase from this workspace is     |
+|          | ideally constructed of modules and state workspaces' code.        |
+| -------- | ----------------------------------------------------------------- |
+| tests    | [tests](./tests) - unit / integration / e2e tests of any present  |
+|          | in other workspaces codebase.                                     |
+| -------- | ----------------------------------------------------------------- |
+| state    | [state](./state) - data containers, state management solution     |
+|          | for the applications in packages workspace.                       |
+| -------- | ----------------------------------------------------------------- |
+
+> 🚩 **Note**
+> 
+> You can choose any comfortable way of working with this monorepo either
+> by cutting out any piece of code for your needs or by choosing any package 
+> as your main product and using all the power of this monorepo to develop it.
+
+## Installation
 
 1. To install dependencies in all packages use `lerna` tool with an appropriate
 flag (either `-S` or `-D`);
 2. To install dependencies in a specific package use lerna with an appropriate
 flag (either `-S` or `-D`) and package name from package.json, as follows,
 `yarn lerna add --scope=@modules/components`
-3. To install dependencies in the root directory use can use yarn
+3. To install dependencies in the root directory use yarn
 `yarn add -W ...` (-W is a necessary flag for adding a dependency 
 into the root package.json)
-4. To create template package using common utils like CRA execute 
+4. To create a template package using common utils like CRA execute 
 `yarn create` with a necessary command. For ex.,
-`yarn create react-app modules/<packageName> --template typescript`
+`yarn create react-app packages/<packageName> --template typescript`
 
-# Typescript configuration
+
+## Typescript configuration
+
 - Separate configs are used
   - One for transpiling ts code into js (tsconfig.build.json)
-  - Another for seamless navigation across whole monorepo (tsconfig.json)
+  - Another for seamless navigation across the whole monorepo (tsconfig.json)
+- *modules* workspace is bundled by TS using `--build`` option.
+When final products use the code from *modules* workspace, it is recommended to
+execute `yarn observe`, which will inspect all **built** workspaces for changes 
+and recompile only changed pieces of the code.
 
-# GIT Code of conduct
+> 🚩 **Note**
+>
+> *modules* workspaces must be built before this command is run.
+
+- To launch ts checks execute `yarn types:check`. It builds all packages
+and then runs ts static analyzer.
+
+> 🚩 **Note**
+>
+> this script MUST be run from the root. The packages may depend on 
+> other packages, so built dependencies are needed for a correct functioning of
+> the static analyzer.
+
+
+## Linting
+
+To lint all packages and modules use `yarn lint` command.
+
+
+To autofix some minor code style errors from the monorepo root use
+*double escaping*, e.g., `yarn lint -- -- --fix` - the first escapes are
+used for yarn, the second escapes are used for lerna cli. (see example in
+lint-staged config)
+
+
+## GIT Code of conduct
 
 This monorepo has hooks enabled and tuned. There are currently these hooks:
-1. `pre-commit` hook does:
+1. `pre-commit` hook, that runs:
   - linting, 
   - changed codebase verification by a user
 2. `prepare-commit-msg` hook launches commitizen that guides through 
@@ -42,7 +108,8 @@ instead of GUI
 # this will launch pre-commit, prepare-commit-msg and commit-msg hooks
 # provide a random string as a commit message, it will be neglected after 
 # prepare-commit-msg
-git commit -m 'asdfkjk'
+
+git commit -m 'a'
 ```
 
 Commit message must be structured as follows (pay attention to new lines) -
@@ -50,7 +117,7 @@ commitizen makes sure you follow to these conventions:
 
 
 **SCHEME**
-```
+```sh
 <type>[optional scope]: <description>
 
 
@@ -76,35 +143,3 @@ conventional commits
 Resolves: 123
 See also: 456, 789
 ```
-
-# TS configuration
-
-- *modules* workspaces are bundled by TS using `--build`` option.
-When final programs are using code from modules workspaces, it is recommended to
-execute `yarn observe` which will inspect all **built** workspaces for changes 
-and recompile only changed pieces of the code.
-
-
-**NOTE!** *modules* workspaces must be built before this command is run.
-
-
-- To launch ts checks execute `yarn types:check`. It builds all packages
-and then runs ts static analyzer.
-
-
-**NOTE!** this script MUST be run from the root. The packages may depend on 
-other packages, so built dependencies are needed for a correct functioning of
-the static analyzer.
-
-
-
-# Linting
-
-To lint all packages and modules use `yarn lint` command.
-
-
-To autofix some minor code style errors use *double escaping*, 
-e.g., `yarn lint -- -- --fix` - the first escapes are used for yarn,
-the second escapes are used for lerna cli. (see example in lint-staged config)
-
-
