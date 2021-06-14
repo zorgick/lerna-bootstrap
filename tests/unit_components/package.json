@@ -1,5 +1,5 @@
 {
-  "name": "@modules/tests",
+  "name": "@tests/unit-components",
   "version": "1.0.0",
   "license": "MIT",
   "author": {

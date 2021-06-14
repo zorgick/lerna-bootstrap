@@ -13,7 +13,8 @@
   },
   "workspaces": [
     "modules/*",
-    "packages/*"
+    "packages/*",
+    "tests/*"
   ],
   "private": true,
   "scripts": {
@@ -21,6 +22,7 @@
     "story": "lerna run storybook --stream",
     "lint": "lerna run lint --parallel",
     "types:check": "yarn build:modules && lerna run types:check",
+    "test:components": "lerna run test --scope=@tests/unit-components",
     "start": "lerna run start --stream",
     "start:web": "lerna run start --scope=@packages/web",
     "build": "lerna run build --stream",
