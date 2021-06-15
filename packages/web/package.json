@@ -13,10 +13,8 @@
     }
   },
   "scripts": {
-    "start": "react-scripts -r @cypress/instrument-cra start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
     "lint": "eslint --ext .tsx,.ts src",
     "types:check": "tsc --noEmit",
     "prepare": "echo \"SKIP_PREFLIGHT_CHECK=true\nDISABLE_ESLINT_PLUGIN=true\nDISABLE_NEW_JSX_TRANSFORM=true\" > .env"
@@ -29,15 +27,17 @@
     "web-vitals": "^1.0.1"
   },
   "devDependencies": {
-    "@cypress/instrument-cra": "^1.4.0",
     "@modules/eslint": "^1.0.0",
     "@types/jest": "^26.0.15",
     "@types/node": "^12.0.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "babel-loader": "8.1",
+    "babel-plugin-istanbul": "^6.0.0",
+    "customize-cra": "^1.0.0",
     "eslint-import-resolver-typescript": "^2.4.0",
     "http-proxy-middleware": "^1.3.1",
+    "react-app-rewired": "^2.1.8",
     "react-scripts": "4.0.3",
     "rimraf": "^3.0.2",
     "typescript": "^4.2.4"
@@ -53,8 +53,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "nyc": {
-    "exclude": "src/reportWebVitals.ts"
   }
 }
