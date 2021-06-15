@@ -13,7 +13,7 @@
     }
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts -r @cypress/instrument-cra start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -29,6 +29,7 @@
     "web-vitals": "^1.0.1"
   },
   "devDependencies": {
+    "@cypress/instrument-cra": "^1.4.0",
     "@modules/eslint": "^1.0.0",
     "@types/jest": "^26.0.15",
     "@types/node": "^12.0.0",
@@ -52,5 +53,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "nyc": {
+    "exclude": "src/reportWebVitals.ts"
   }
 }
