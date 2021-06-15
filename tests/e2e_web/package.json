@@ -11,11 +11,13 @@
     }
   },
   "scripts": {
+    "cypress:run": "cypress run",
     "cypress:open": "cypress open",
     "lint": "eslint --ext ts \"./**/*.spec.ts\"",
     "types:check": "tsc --noEmit"
   },
   "devDependencies": {
+    "@cypress/code-coverage": "^3.9.6",
     "@modules/eslint": "^1.0.0",
     "cypress": "^7.5.0",
     "eslint-plugin-cypress": "^2.11.3",

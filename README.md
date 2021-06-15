@@ -40,7 +40,7 @@ into the root package.json)
 
 ## NPM scripts
 
-| Type                  | Description                                                                                   |
+| Scripts               | Description                                                                                   |
 | --------------------- | --------------------------------------------------------------------------------------------- |
 | `setup`               | Installs dependencies and links all workspaces by hoisting them in root node_modules          |
 | `story`               | Launches storybook for [components](./modules/components)                                     |

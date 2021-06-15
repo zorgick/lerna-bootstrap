@@ -4,7 +4,10 @@
 node_modules
 
 # testing
-coverage
+**/coverage
+**/.nyc*
+**/cypress/videos
+**/cypress/screenshots
 jest-report.xml
 
 # production
