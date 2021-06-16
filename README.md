@@ -1,3 +1,11 @@
+<h1 align="center">Lerna-bootstrap</h1>
+
+<p align="center">
+<a href="http://commitizen.github.io/cz-cli/"><img src="https://img.shields.io/badge/commitizen-friendly-brightgreen.svg" alt="Commitizen friendly" /></a>
+<a href="https://github.com/zorgick/lerna-bootstrap/pulls"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs welcome" /></a>
+<a href="https://github.com/zorgick/lerna-bootstrap/blob/master/LICENSE"><img src="https://img.shields.io/github/license/zorgick/lerna-bootstrap.svg" alt="License - MIT" /></a>
+</p>
+
 ## Getting started
 
 Lerna-bootstrap is a multitool monorepo that makes it easy to launch any web-based
@@ -55,6 +63,23 @@ into the root package.json)
 | `test:web`            | Starts dev server in [packages/web](./packages/web) workspace and runs `cypress:web`          |
 | `observe`             | Inspects all **built** workspaces for changes and recompiles only changed pieces of the code  |
 | `prepare`             | Initializes husky hooks and runs prepare script in all workspaces                             |
+
+
+## Dependencies manipulation
+
+> 🚩 **Note**
+>
+> Do not hoist any dev-|dependency to lerna root, that it doesn't use directly,
+> so that each workspace can be forked separately at any time without any manipulation.
+>
+>
+> Otherwise, make sure that a workspace is designed to be used as a part 
+> of another application, that conforms to peerDependency requirements of this
+> workspace.
+
+A workspace should always list what it requires to operate. E.g. if
+"modules/components" package requires lodash at runtime, then it **MUST** have
+lodash in its dependencies. 
 
 
 ## Typescript configuration
