@@ -6,6 +6,8 @@
 <a href="https://github.com/zorgick/lerna-bootstrap/blob/master/LICENSE"><img src="https://img.shields.io/github/license/zorgick/lerna-bootstrap.svg" alt="License - MIT" /></a>
 </p>
 
+# ❗This setup is deprecated.
+
 ## Getting started
 
 Lerna-bootstrap is a multitool monorepo that makes it easy to launch any web-based
